@@ -1,0 +1,9 @@
+# Cross-Company Vocabulary Transfer
+
+The team studied whether financial-news vocabulary learned for larger companies could be useful for smaller companies in related supply chains. The two study pairs were Wistron (3231) and AIC (3693), and AVC (3017) and Jentech (3653). This repository retains the Wistron-to-AIC case for which the original transfer notebook and saved numerical output are available.
+
+The experiment transfers a source vocabulary rather than a fitted source classifier. It uses the target firm's daily text and price labels (five trading days, 1% return threshold). The classifier is fit on the previous 60 matched text/price observations, using non-neutral training labels, training-window TF-IDF fitting, random minority-class oversampling, and LinearSVC. Absolute decision scores determine whether a prediction is retained. A score threshold is a margin cutoff, not a calibrated probability.
+
+The saved output reports 97 candidate dates. The numerator of coverage counts evaluated non-neutral calls; dates without usable labels or model predictions are not counted as calls. Accuracy is conditional on those evaluated calls. The [threshold table](../results/transfer_threshold_results.csv) transcribes the original notebook's counts and accuracy, with proportions calculated from the integer counts.
+
+This historical experiment used a fixed source vocabulary and did not enforce a forward-label availability gap or document the source vocabulary cutoff relative to every target prediction date. Its results illustrate selective prediction and are not a validated trading strategy. The exact historical vocabulary file pairing was not recorded in the saved output. The [backtest script](../src/transfer_backtest.py) provides the corresponding workflow for explicitly supplied local source vocabularies and target data.

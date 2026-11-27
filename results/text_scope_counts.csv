@@ -1,0 +1,9 @@
+stock_id,text_mode,label_3d_sigma_0_01,days,total_articles,avg_articles_per_day,median_articles_per_day,min_articles_per_day,max_articles_per_day
+3231,title_lead,down,161,1715,10.652173913043478,10.0,1,38
+3231,title_lead,up,211,1792,8.492890995260664,7.0,1,36
+3231,title_lead_full,down,161,1938,12.03726708074534,11.0,1,40
+3231,title_lead_full,up,211,2029,9.616113744075829,8.0,1,41
+3017,title_lead_full,down,131,465,3.549618320610687,3.0,1,22
+3017,title_lead_full,up,188,658,3.5,3.0,1,16
+3017,title_lead,down,129,415,3.2170542635658914,3.0,1,18
+3017,title_lead,up,181,584,3.226519337016575,2.0,1,13
